@@ -1,0 +1,134 @@
+.formular{
+    border-radius: 2rem;
+    padding-bottom: 2rem;
+}
+
+.formular article{
+    background-color: ghostwhite;
+    margin-bottom: -5rem;
+    padding-bottom: 1rem;
+}
+
+.formular h2 {
+    background-color: #474b4f;
+    color: cornflowerblue;
+    font-size: 2rem;
+    text-align: center;
+}
+
+.formular article label{
+    margin: 1rem;
+    color: cornflowerblue;
+    font-family: "Times New Roman",sans-serif;
+    font-size: 1rem;
+    vertical-align: top;
+    display: inline-block;
+    min-width: 4rem;
+}
+
+.formular label{
+    display: inline-block;
+    text-align: center;
+}
+
+.formular input, textarea{
+    border: 0.1rem solid #eee;
+    border-left: 0.5rem solid;
+    border-radius: 0.5rem;
+    transition: border-color .3s ease-out;
+    color: black;
+    min-width: 20vw;
+    display: flow;
+}
+
+.formular textarea{
+    background-color: white;
+    min-width: 20vw;
+    resize: none;
+}
+
+
+.formular input:required, textarea:required{
+    border-left-color: lawngreen;
+}
+
+.formular input:invalid, textarea:invalid{
+    border-left-color: salmon;
+}
+
+.formular input:optional{
+    border-left-color: cornflowerblue;
+}
+
+button{
+    padding: 1rem;
+    margin-left: 1rem;
+    background-color: cornflowerblue;
+    border-radius: 1rem;
+    border-style: none;
+}
+
+button:hover{
+    background-color: #474b4f;
+    color: white;
+}
+
+form {
+    padding-bottom: 2rem;
+    display: inline;
+}
+
+.formular p{
+    color: red;
+    font-family: "Times New Roman",sans-serif;
+    margin-left: -10rem;
+    margin-top: -0.5rem;
+}
+
+#esportFan, #esportFan label{
+    display: flex;
+    text-align: center;
+}
+
+
+#gender{
+    text-align: center;
+    color: cornflowerblue;
+}
+
+#message{
+    margin-top: -2rem;
+    display: none;
+}
+
+
+.error{
+    width: 100%;
+    padding: 0;
+    font-size: 70%;
+    background-color: salmon;
+    color: black;
+    box-sizing: border-box;
+}
+
+.error.active{
+    padding: 0.35rem;
+}
+
+.success{
+    width: 100%;
+    padding: 0;
+    font-size: 90%;
+    background-color: greenyellow;
+    color: black;
+    box-sizing: border-box;
+    border-radius: 1rem;
+}
+
+.success.active{
+    padding: 1rem;
+}
+
+
+
+

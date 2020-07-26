@@ -1,0 +1,373 @@
+@import url("navigationbar.css");
+@import url("formular.css");
+@import url("userOpinions.css");
+@import url("articleForm.css");
+@import url("googleButton.css");
+
+html {
+    font-size: 100%;
+    font-style: normal;
+    font-family: "Agency FB", Century, Arial, sans-serif;
+    font-weight: normal;
+    text-align: justify;
+    background: #2c2f33;
+    color: white;
+}
+
+body > * {
+    margin: 2rem;
+}
+
+a:link, a:visited {
+    text-decoration: none;
+    color: white;
+}
+
+a:hover {
+    color: cornflowerblue;
+}
+
+
+.imgContainer {
+    text-align: center;
+    min-width: 70%;
+    margin-bottom: -2rem;
+    display: inline-block;
+    width: 100%;
+}
+
+figure{
+    text-align: center;
+}
+
+figure img {
+    text-align: center;
+    max-width: 70%;
+    width: 50%;
+}
+
+.articleText{
+    text-align: justify;
+    font-family: Helvetica,Arial, sans-serif;
+    font-size: 1.5rem;
+    text-indent: 2rem;
+    color: #2c2f33;
+    margin: 2rem;
+}
+
+.header-image {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../Pictures/ESPORTS-HEADER2.jpg");
+    height: 10rem;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+header h1 {
+    margin-top: -1.5rem;
+    font-size: 3rem;
+}
+
+header h2 {
+    font-size: 2rem;
+    color: cornflowerblue;
+}
+
+
+main {
+    background-color: ghostwhite;
+    margin-bottom: -1rem;
+}
+
+.header-text{
+    text-align: center;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+}
+
+.header-text h2{
+    animation-name: h2colours;
+    animation-timing-function: ease-in-out;
+    animation-duration: 5s;
+    animation-direction: alternate-reverse;
+    animation-iteration-count: infinite;
+}
+
+main > article > h2{
+    background-color: #474b4f;
+    color: cornflowerblue;
+    font-size: 2rem;
+    text-align: center;
+}
+
+main > article{
+    border-radius: 2rem;
+    background-color: ghostwhite;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+}
+
+
+section > h2, section > h4{
+    display: none;
+}
+
+article > p {
+    color: #2c2f33;
+}
+
+li {
+    color: black;
+}
+
+.articleText{
+    font-size: 1.25rem;
+}
+.articleText a{
+    color: #2c2f33;
+}
+
+.articleText a:hover{
+    color: cornflowerblue;
+}
+
+.articleDesc > section > p {
+    text-align: center;
+    color: black;
+    font-size: 1.5rem;
+    font-family: "Times New Roman",Arial,sans-serif;
+}
+
+.articleAuthor {
+    color: cornflowerblue;
+    margin: -1.5rem 1rem 1rem;
+    font-size: 1.5rem;
+}
+
+.articleDesc{
+    text-align: justify;
+    margin-left: 2rem;
+    color: #2c2f33;
+    justify-content: center;
+}
+
+footer {
+    text-align: center;
+    margin-top: 5rem;
+}
+
+.formular{
+    text-align: center;
+}
+
+#nextAndPrevious{
+    margin-top: 3rem;
+}
+
+#nextAndPrevious a{
+    color: #2c2f33;
+    background-color: cornflowerblue;
+    padding: 1rem;
+    margin: 1rem;
+}
+
+#articleFooter{
+    text-align: center;
+}
+
+.linkAsButton{
+    background-color: cornflowerblue;
+    padding: 1rem;
+    color: #2c2f33;
+}
+
+.linkAsButton:visited, .linkAsButton:link{
+    text-decoration: none;
+    color: #2c2f33;
+}
+
+.linkAsButton:hover{
+    text-decoration: none;
+    color: #eeeeee;
+}
+
+#commentSection h2{
+    background-color: #474b4f;
+    color: cornflowerblue;
+    font-size: 2rem;
+    text-align: center;
+}
+
+#commentSection .comment{
+    background-color: cornflowerblue;
+    border-radius: 1rem;
+    margin: 2rem 1rem 1rem;
+}
+
+#commentSection .articleAuthor{
+    color: #eeeeee;
+}
+
+#commentSection .articleText{
+    margin-top: -1rem;
+    padding-bottom: 1rem;
+    text-align: justify;
+}
+
+#welcomeText p{
+    text-align: center;
+}
+
+@media only screen and (min-width: 699px) and (max-resolution: 1.8dppx) {
+    body {
+        min-width: 40rem;
+        max-width: 80rem;
+        margin-left: auto;
+        margin-right: auto;
+
+        grid-template-areas: ". head ." ". nav ." ". main ." ". userOp ."". form ." ". foot .";
+
+        display: grid;
+
+        grid-template-columns: auto 1fr auto;
+        grid-template-rows: auto 1fr auto;
+
+        display: -ms-grid;
+        -ms-grid-columns: auto 1fr auto;
+        -ms-grid-rows: auto 1fr auto;
+    }
+
+    body > header {
+        grid-area: head;
+    }
+
+    body > main {
+        grid-area: main;
+    }
+
+    body > footer {
+        grid-area: foot;
+    }
+
+    body> .topNavBar {
+        grid-area: nav;
+    }
+
+    body > .formular{
+        grid-area: form;
+    }
+
+    body > .userOpinions{
+        grid-area: userOp;
+    }
+
+
+    .articleDesc{
+        display: inline-flex;
+        margin-right: 1rem;
+        margin-bottom: -1rem;
+    }
+
+    .articleDesc figure{
+        max-width: 50%;
+    }
+
+}
+
+@media not all and (min-width: 699px) and (max-resolution: 1.8dppx) {
+
+    body {
+        min-width: 25rem;
+        max-width: 50rem;
+    }
+
+    main {
+        margin-top: -1rem;
+    }
+
+    main h2 {
+        margin-top: 2rem;
+    }
+
+    footer{
+        margin-top: 5rem;
+        text-align: center;
+    }
+
+    .header-text h1 {
+        font-size: 2rem;
+    }
+
+    .header-text h2 {
+        font-size: 1.5rem;
+    }
+
+    .articleDesc{
+        text-align: center;
+    }
+
+    figure{
+        display: inline;
+        width: 40%;
+    }
+
+    figure img{
+        text-align: center;
+        margin-left: -1rem;
+    }
+
+    .articleDesc > section{
+        display: block;
+        margin-left: 2rem;
+        margin-bottom: -1rem;
+        margin-right: 2rem;
+        text-align: justify;
+    }
+
+
+    .articleAuthor {
+    }
+
+
+
+    .formular label{
+        display: flow;
+    }
+
+    .topNavBar{
+        margin-bottom: 1rem;
+    }
+
+    #commentFooter{
+        display: flex;
+        justify-content: center;
+        border-spacing: 1rem;
+    }
+
+    #commentFooter .linkAsButton{
+        margin-left: 0.5rem;
+    }
+
+}
+
+@keyframes h2colours {
+    0% {
+        color: cornflowerblue;
+    }
+
+    33%{
+        color: lightskyblue;
+    }
+
+    66%{
+        color: darkslateblue;
+    }
+
+    100%{
+        color: blue;
+    }
+}

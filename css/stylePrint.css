@@ -1,0 +1,56 @@
+html {
+    font-family: "Times New Roman", serif;
+    font-size: 12pt;
+    color: black;
+}
+
+.topNavBar{
+    display: none;
+}
+
+a:link, a:visited{
+    text-decoration: none;
+    color: black;
+}
+
+header h1 {
+    font-size: 2rem;
+    text-align: center;
+}
+
+header h2 {
+    font-size: 1rem;
+    text-align: center;
+}
+
+main > article > h2 {
+    font-size: 1.3rem;
+}
+
+footer{
+    text-align: center;
+    font-size: 1rem;
+}
+
+figure {
+    align-content: center;
+    text-align: center;
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+}
+
+figcaption{
+    text-align: center;
+}
+
+section > h2, section > h4{
+    display: none;
+}
+
+.formular {
+    display: none;
+}
+
+.userOpinions{
+    display: none;
+}

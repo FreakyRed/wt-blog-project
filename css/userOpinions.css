@@ -1,0 +1,85 @@
+.userOpinions{
+    border-radius: 2rem;
+    padding-bottom: 2rem;
+}
+
+.userOpinions article{
+    text-align: left;
+    border-radius: 2rem;
+    background-color: ghostwhite;
+    margin-bottom: -5rem;
+    padding-bottom: 1rem;
+}
+
+.userOpinions section{
+    text-align: center;
+    display: inline-block;
+}
+
+.userOpinions h2 {
+    background-color: #474b4f;
+    color: cornflowerblue;
+    font-size: 2rem;
+    text-align: center;
+}
+
+
+.userOpinions .wrapper{
+    width: 100%;
+    display: flex;
+    min-width: 20rem;
+    max-width: 76rem;
+    margin: 0 -1.5rem 1em;
+}
+
+.userOpinions .commentFromUser{
+    font-size: 1rem;
+    margin-left: 3rem;
+    border-radius: 0.75rem 0.75rem 0.75rem 0.75rem;
+    background-color: cornflowerblue;
+    font-family: "Agency FB",Arial,sans-serif;
+    width: 100%;
+    display: inline-block;
+    text-align: center;
+}
+
+.commentFromUser h3{
+    display: inline;
+    color: #2c2f33;
+}
+
+
+.commentFromUser p {
+    color: white;
+}
+
+.wrapper picture{
+    margin-left: 3rem;
+    margin-top: 0.5rem;
+    margin-right: -2rem;
+}
+
+.wrapper picture img{
+    position: relative;
+    border-radius: 2rem;
+    width: 7rem;
+}
+
+.userOpinions a:link, a:visited {
+    text-decoration: none;
+    color: black;
+}
+
+.userOpinions a:hover {
+    color: white;
+}
+
+.userOpinions button{
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+}
+
+#deleteButtonForOpinions {
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+}

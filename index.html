@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="google-signin-client_id"
+          content="739447374919-iij0b3qqlnaa4eidj70m2k543n4j3675.apps.googleusercontent.com">
+    <title>Svet e-športov</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/styleScreen.css" media="screen">
+    <link rel="stylesheet" href="css/stylePrint.css" media="print">
+</head>
+<body>
+<header title="Homepage">
+    <div class="header-image">
+        <div class="header-text">
+            <a href="index.html"><h1>Esport world</h1></a>
+            <h2>News from the world of esports</h2>
+        </div>
+    </div>
+
+    <div id="googleSignIn">
+        <div id="SignInButton"></div>
+        <div id="SignedIn">
+            <div id="userName"></div>
+            <button onclick="signOut()" title="Google sign out">Sign Out</button>
+        </div>
+    </div>
+
+    <div class="topNavBar">
+        <nav>
+            <a class="active" href="#home" id="topNavHome" onclick="setToActiveHome()">Home</a>
+            <a href="#articles/1/" id="topNavArticles" onclick="setToActiveArt()">Articles</a>
+            <a href="#artInsert" id="topNavAddArt" onclick="setToActiveAddArt()">Add article</a>
+            <a href="#opinions" id="topNavOpinions" onclick="setToActiveOp()">Visitor opinions</a>
+            <a href="#addOpinion" id="topNavAddOpinion" onclick="setToActiveAddOp()">Add your opinion</a>
+        </nav>
+    </div>
+</header>
+
+<main id="router-view">
+</main>
+
+<script id="template-home" type="text/template">
+    <article>
+        <h2>Welcome</h2>
+        <div class="imgContainer">
+            <figure>
+                <img src="Pictures/esportswelcome.jpg"/>
+            </figure>
+        </div>
+        <div class="articleText" id="welcomeText">
+                <p>Welcome to my site.</p>
+                <p>This site is about the world of esports, atleast it should be..</p>
+                <p>It is a project made for WT 2020 by Martin Frajkor</p>
+        </div>
+    </article>
+</script>
+
+<script id="template-articles" type="text/template">
+    {{#.}}
+    <article>
+        <h2><a href="{{detailLink}}">{{title}}</a></h2>
+        <div class="articleAuthor">posted by {{author}}</div>
+    </article>
+    {{/.}}
+    <article>
+        <nav id="nextAndPrevious">
+            {{#dataForRendering}}
+            {{#previousPage}}
+            <a href="#articles/{{previousPage}}/{{totalPages}}" onclick="decLastlyVisited()"><< Previous page</a>
+            {{/previousPage}}
+            {{#nextPage}}
+            <a href="#articles/{{nextPage}}/{{totalPages}}" onclick="incLastlyVisited()">Next page >></a>
+            {{/nextPage}}
+            {{/dataForRendering}}
+        </nav>
+    </article>
+</script>
+
+<script id="template-articles-error" type="text/template">
+    <article>
+        <h2>Articles acquisition failed</h2>
+        <p>
+            {{errMessage}}
+        </p>
+    </article>
+</script>
+
+<script id="template-opinions" type="text/template">
+    <div class="userOpinions">
+        <article>
+            <h2>Visitor opinions</h2>
+            {{#.}}
+            <div class="wrapper">
+                <picture><img src="{{url}}"/></picture>
+                <div class="commentFromUser">
+                    <div><h3 class="user">{{name}} {{gender}}
+                        <a href="mailTo:{{email}}">{{email}}</a></h3></div>
+                    <div><p>{{comment}}</p></div>
+                    <div><p>{{createdAt}}</p></div>
+                    <div><p>{{keywords}}</p></div>
+                </div>
+            </div>
+            {{/.}}
+        </article>
+    </div>
+    <button type="button" class="hiddenElm" id="deleteButtonForOpinions" onclick="removeOlderComments(event)">Delete old
+        opinions
+    </button>
+</script>
+
+
+<script id="template-addOpinion" type="text/template">
+    <div class="formular">
+        <article>
+            <form id="form" onsubmit="return processFormData(event)">
+                <h2>Your opinion</h2>
+                <div><label>Your name: *
+                    <input type="text" id="name" name="name" value="{{name}}"
+                           required minlength="4" maxlength="20" size="40"
+                           placeholder="Your Name"/>
+                    <span class="error" aria-live="polite"></span>
+                </label>
+                </div>
+                <div>
+                    <label>Your email: *
+                        <input type="email" id="mailing" name="email" size="40"
+                               pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$"
+                               placeholder="Enter your email" required/>
+                        <span class="error" aria-live="polite"></span>
+                    </label>
+                </div>
+
+                <div>
+                    <label>URL(optional):
+                        <input type="url" name="url" id="url" placeholder="Enter your URL" size="40"></label></div>
+
+                <div>
+                    <label>Are you a fan of esports? (optional)
+                        <input type="checkbox" id="esportFan" name="esportFan"/></label>
+                </div>
+
+                <label>Gender (optional):</label>
+                <div id="gender">
+                    <label>Female
+                        <input type="radio" id="female" name="gender" value="Female"/>
+                    </label>
+                    <label>Male
+                        <input type="radio" id="male" name="gender" value="Male"/>
+                    </label>
+                </div>
+
+                <div>
+                    <label>Your opinion: *
+                        <textarea id="opinion" name="opinion" rows="7" cols="40"
+                                  placeholder="Please, write your opinion..." required minlength="4"></textarea>
+                        <span class="error" aria-live="polite"></span>
+                    </label>
+                </div>
+
+                <div>
+                    <label>Keywords:
+                        <input type="text" id="favEsport" list="esports" placeholder="Enter keyword" size="20"/>
+                        <datalist id="esports">
+                            <option value="Dota 2"></option>
+                            <option value="CS:GO"></option>
+                            <option value="League of Legends"></option>
+                            <option value="Other"></option>
+                        </datalist>
+                    </label>
+                </div>
+
+                <p>* is mandatory</p>
+
+                <div>
+                    <label>
+                        <input id="message"/>
+                        <span class="success" aria-live="polite"></span>
+                    </label>
+                </div>
+
+                <span>
+                <button type="submit" class="favorite">Send</button>
+                <button type="reset" class="favorite">Reset</button>
+            </span>
+            </form>
+        </article>
+    </div>
+</script>
+
+<script id="template-article" type="text/template">
+    <article>
+        <h2>{{title}}</h2>
+        <div class="articleAuthor">posted by {{author}}</div>
+        {{#imageLink}}
+        <div class="imgContainer">
+            <figure>
+                <img src="{{imageLink}}" alt="article figure"/>
+            </figure>
+        </div>
+        {{/imageLink}}
+        <section>
+            <h4>Content</h4>
+            <div class="articleText"><p>{{{content}}}</p></div>
+        </section>
+        <footer id="articleFooter">
+            <a href="{{backLink}}" class="linkAsButton">Back</a>
+            <a href="{{editLink}}" class="linkAsButton">Edit</a>
+            <a href="{{deleteLink}}" class="linkAsButton">Delete</a>
+        </footer>
+    </article>
+    <div id="commentSection" href="#artComment"></div>
+</script>
+
+
+<script id="template-article-form" type="text/template">
+    <div class="formular">
+        <article>
+            <h2>{{formTitle}}</h2>
+
+            <form id="articleForm" onsubmit="return {{formSubmitCall}}">
+                <div>
+                    <label for="author">Author:
+                        <input type="text" name="author" id="author" value="{{author}}" size="40"
+                               title="Article author, max. length 100 characters." maxlength="100"
+                               placeholder="Enter your name"/>
+                    </label>
+                </div>
+                <div>
+                    <label for="title">Title:
+                        <input type="text" name="title" id="title" value="{{title}}" size="40" maxlength="100"
+                               pattern="\S[\S\s]*"
+                               required
+                               title="Article title, mandatory item, max. length: 100 characters, the first character must not be a space."
+                               placeholder="Enter article title"/>
+                    </label>
+                </div>
+                <div>
+                    <label for="imageLink">Image (url):
+                        <input type="url" name="imageLink" id="imageLink" value="{{imageLink}}" size="40"
+                               title="Image URL, max. length 100 characters." maxlength="100"
+                               placeholder="Enter URL link"/>
+                    </label>
+                </div>
+                <div>
+                    <button type="button" id="btShowFileUpload" onclick="showFileUpload()">Upload image</button>
+                </div>
+                <div>
+                    <fieldset class="added hiddenElm" id="fsetFileUpload">
+                        <legend>Image Upload</legend>
+                        <input type="file" id="flElm" name="file" accept="image/jpeg, image/png"/>
+                        <button type="button" id="btFileUpload" onclick="uploadImg('{{urlBase}}')">Send image to
+                            server
+                        </button>
+                        <button type="button" id="btCancelFileUpload" onclick="cancelFileUpload()">Cancel uploading
+                        </button>
+                    </fieldset>
+                </div>
+                <div>
+                    <label for="content">Article content:
+                        <textarea
+                                name="content" id="content" spellcheck="true" lang="sk"
+                                cols="40" rows="20" required
+                                title="Article content, mandatory item, can be plain text or in HTML.">{{content}}</textarea>
+                    </label>
+                </div>
+                <div>
+                    <label for="tags">Keywords:
+                        <input type="text" name="tags" id="tags" value="{{tags}}" size="40"
+                               title="Keyword list, comma separated." placeholder="e.g. village, drama"/>
+                    </label>
+                </div>
+
+                <div>
+                    <button type="reset">
+                        Reset
+                    </button>
+                    <button type="submit">
+                        {{submitBtTitle}}
+                    </button>
+                </div>
+            </form>
+            {{#backLink}}
+            <footer id="articleFormFooter">
+                <a href="{{backLink}}" class="linkAsButton">Back</a>
+            </footer>
+            {{/backLink}}
+        </article>
+    </div>
+</script>
+
+<script id="template-article-delete" type="text/template">
+    <article>
+        <h2>Article successfully removed</h2>
+        <div class="articleText"><p>Your article has been successfully removed from the server.</p></div>
+        <footer id="articleDeleteFooter">
+            <a href="{{backLink}}">Back to Articles</a>
+        </footer>
+    </article>
+</script>
+
+<script id="template-article-comment" type="text/template">
+    <article>
+        <h2>Comments</h2>
+        {{#comments}}
+        <div class="comment">
+            <div class="articleAuthor">posted {{author}} at {{dateCreated}}</div>
+            <div class="articleText">{{text}}</div>
+        </div>
+        {{/comments}}
+        <footer id="commentFooter">
+            {{#prevComment}}
+            <!--            <a href="#artComment/{{artID}}/{{prevComment}}" class="linkAsButton">Previous page</a>-->
+            <a href="{{prevComment}}" class="linkAsButton">Previous page</a>
+            {{/prevComment}}
+            <a href="{{addComment}}" class="linkAsButton">Add comment</a>
+            {{#nextComment}}
+            <!--            <a href="#artComment/{{artID}}/{{nextComment}}" class="linkAsButton">Next page</a>-->
+            <a href="{{nextComment}}" class="linkAsButton">Next page</a>
+            {{/nextComment}}
+        </footer>
+    </article>
+</script>
+
+<script id="template-comment-form" type="text/template">
+    <div class="formular">
+        <article>
+            <h2>Add comment</h2>
+            <form id="commentForm" onsubmit="return processCommentFrmData(event,{{artID}})">
+                <div><label>Author:<input type="text" id="commentAuthor" value="{{commentAuthor}}" placeholder="Enter your name" required></label>
+                </div>
+                <div><label>Comment:<textarea placeholder="Enter your comment" id="commentText"
+                                              required rows="10" cols="20"></textarea></label></div>
+                <div class="buttons">
+                    <button type="reset">Reset</button>
+                    <button type="submit">Submit</button>
+                </div>
+            </form>
+            <footer id="commentAddFooter">
+                <a href="{{backLink}}" class="linkAsButton">Back to comments</a>
+            </footer>
+        </article>
+    </div>
+</script>
+
+
+<footer>
+    <p>Martin Frajkor, FEI TUKE, Webové technológie</p>
+</footer>
+
+
+
+<script src="js/googleSignIn.js"></script>
+<script src="https://apis.google.com/js/platform.js?onload=startGoogleSignIn" async defer></script>
+<script src="js/mustache.min.js"></script>
+<script src="js/topNavBarHighlight.js"></script>
+<script type="module" src="js/routerInit.js"></script>
+<script src="js/addOpinion.js"></script>
+<script src="js/handleArticleForm.js"></script>
+<script src="js/handleCommentForm.js"></script>
+
+
+
+</body>
+</html>

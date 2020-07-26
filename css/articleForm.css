@@ -1,0 +1,49 @@
+#articleForm{
+    display: inline-block;
+    text-align: center;
+    justify-content: center;
+}
+
+#articleFormFooter{
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+}
+
+#articleDeleteFooter a{
+    background-color: cornflowerblue;
+    text-decoration: none;
+    padding: 1rem;
+    color: black;
+}
+
+#commentFooter {
+    margin-top: -0.25rem;
+    margin-bottom: 2rem;
+}
+
+#commentAddFooter{
+    margin-bottom: 1rem;
+}
+
+#commentAddFooter{
+    display: inline-block;
+    text-align: center;
+}
+
+#commentForm .buttons{
+    margin-left: -1rem;
+    margin-bottom: -3rem;
+}
+
+#articleDeleteFooter a:hover{
+    text-decoration: none;
+    color: #eeeeee;
+}
+
+#fsetFileUpload{
+    color: #2c2f33;
+}
+
+.hiddenElm {
+    display: none;
+}

@@ -1,0 +1,14 @@
+#googleSignIn{
+    position: fixed;
+    right: 0;
+    bottom: 0;
+}
+
+#googleSignIn button{
+    border-radius: 0;
+    text-align: center;
+}
+
+#userName{
+    text-align: right;
+}

@@ -1,0 +1,28 @@
+.topNavBar{
+    background-color: #474b4f;
+    overflow: hidden;
+    margin-bottom: -3rem;
+    width: 100%;
+}
+
+.topNavBar a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: all 1s ease-in-out;
+    width: 20%;
+}
+
+.topNavBar a:hover{
+    background-color: darkgray;
+    color: white;
+}
+
+.topNavBar a.active{
+    background-color: cornflowerblue;
+    color: white;
+}

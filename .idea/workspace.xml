@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="cf449d23-f316-4cf8-9bc9-27e5468fba56" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="JavaScript File" />
+        <option value="CSS File" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1aro5m5OJgEKNS4IDZiGNa7P6Xl" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\freak\WebstormProjects\WebTech12\Pictures" />
+      <recent name="C:\Users\freak\WebstormProjects\WebTech10\js" />
+      <recent name="C:\Users\freak\WebstormProjects\WebTech10\css" />
+      <recent name="C:\Users\freak\WebstormProjects\WebTech10\Pictures" />
+    </key>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="cf449d23-f316-4cf8-9bc9-27e5468fba56" name="Default Changelist" comment="" />
+      <created>1587502892362</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1587502892362</updated>
+      <workItem from="1587502893850" duration="6934000" />
+      <workItem from="1587547756177" duration="4827000" />
+      <workItem from="1587591895452" duration="6619000" />
+      <workItem from="1587633492430" duration="4735000" />
+      <workItem from="1587638371831" duration="366000" />
+      <workItem from="1587712595056" duration="25002000" />
+      <workItem from="1588016925077" duration="5880000" />
+      <workItem from="1588025998545" duration="2145000" />
+      <workItem from="1588080679324" duration="28334000" />
+      <workItem from="1588233999947" duration="27179000" />
+      <workItem from="1588329450684" duration="21761000" />
+      <workItem from="1588418502781" duration="3372000" />
+      <workItem from="1588422087962" duration="128000" />
+      <workItem from="1588422229508" duration="86000" />
+      <workItem from="1588447624895" duration="3483000" />
+      <workItem from="1588529690163" duration="10213000" />
+      <workItem from="1588756233513" duration="3093000" />
+      <workItem from="1590583223097" duration="249000" />
+      <workItem from="1590656908330" duration="429000" />
+      <workItem from="1592775572173" duration="142000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="567" y="197" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1587503402807">
+      <screen x="0" y="0" width="1676" height="902" />
+    </state>
+    <state x="567" y="197" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1676.902@0.0.1676.902" timestamp="1587503402807" />
+    <state x="617" y="205" key="FileChooserDialogImpl" timestamp="1590657321470">
+      <screen x="0" y="0" width="1676" height="902" />
+    </state>
+    <state x="617" y="205" key="FileChooserDialogImpl/0.0.1676.902@0.0.1676.902" timestamp="1590657321470" />
+    <state x="500" y="190" width="672" height="678" key="search.everywhere.popup" timestamp="1588354900890">
+      <screen x="0" y="0" width="1676" height="902" />
+    </state>
+    <state x="500" y="190" width="672" height="678" key="search.everywhere.popup/0.0.1676.902@0.0.1676.902" timestamp="1588354900890" />
+  </component>
+</project>
